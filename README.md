@@ -30,5 +30,5 @@ CLI version 1.4.x o mas grande. Verficar `gulp -v`
 ##Development
 
 * Iniciar el servidor de API. Corre en http://localhost:3000
-`npm run backend`
+`gulp debug`
 

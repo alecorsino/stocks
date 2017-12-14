@@ -1,9 +1,8 @@
-#!/usr/bin/env node
 
 /**
  * Module dependencies.
  */
-
+console.log('[DIR]:',__dirname);
 var backend = require('../backend');
 var debug = require('debug')('backend:server');
 var http = require('http');
@@ -12,7 +11,8 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+// var port = normalizePort(process.env.PORT || '3000');
+var port = '7000';
 backend.set('port', port);
 
 /**

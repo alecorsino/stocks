@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: "node:8.9.3"
+    user: "node"
+    working_dir: /home/node/backend
+    environment: 
+      - NPM_CONFIG_PREFIX=/home/node/.npm-global
+      - NODE_ENV=production
+      - NPM_CONFIG_LOGLEVEL=info
+    ports:
+    - '3000:3000'
+    volumes:
+    - .:/home/node/backend

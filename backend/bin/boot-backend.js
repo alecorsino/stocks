@@ -1,8 +1,6 @@
-
 /**
  * Module dependencies.
  */
-console.log('[DIR]:',__dirname);
 var backend = require('../backend');
 var debug = require('debug')('backend:server');
 var http = require('http');
@@ -13,21 +11,8 @@ var http = require('http');
 
 // var port = normalizePort(process.env.PORT || '3000');
 var port = '7000';
-backend.set('port', port);
+var server;
 
-/**
- * Create HTTP server.
- */
-
-var server = http.createServer(backend);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -88,3 +73,29 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+function onClose(){
+  console.log('[SHUTTING DOWN SERVER]');
+}
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+function start(){
+  console.log('[BOOTING UP BACKEND]');
+  backend.set('port', port);
+  server = http.createServer(backend);
+  
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+  server.on('close', onClose);
+}
+
+function stop(){
+  server.close();
+}
+
+start();
+// exports.start = start;
+// exports.stop = stop;

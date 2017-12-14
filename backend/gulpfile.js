@@ -1,21 +1,61 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var spawn = require('child_process').spawn;
+// const spawn = require('child_process').spawn;
+const gulp        = require('gulp');
+const browserSync = require('browser-sync').create();
+const nodemon = require('gulp-nodemon')
 
+  gulp.task('browser-sync', function() {
+      browserSync.init({
+          proxy: "http://localhost:7000",
+          port:4000
+      });
+  });
+  
 
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        proxy: "http://localhost:7000"
+  gulp.task('nodemon', function (cb) {
+    var started = false;
+    
+    return nodemon({
+      verbose:true,
+      script: 'bin/boot-backend.js',
+      ext:'js',
+      ignore: ['node_modules'],
+      watch:['routes','views','./'],
+      env:{'DEBUG':'backend:*'}
+    }).on('start', function () {
+      // to avoid nodemon being started multiple times
+      if (!started) {
+        cb();
+        started = true; 
+      } 
+    })
+    .on('restart', function (files) {
+      console.log('[FILES CHANGED]', files);
     });
+  });
+  
 
-    gulp.watch('backend.js', ['server:restart']);
-    // gulp.watch("backend.js").on('change', browserSync.reload);
+gulp.task('browser-sync:reload', function (done) {
+  console.log('[RELOADING]');
+  browserSync.reload();
+  done();
 });
 
-var command;
-gulp.task('server:debug', function (cb) {
-  process.env.DEBUG = 'backend:*';
-  command = spawn('node', ['bin/boot-backend.js'] );
+gulp.task('debug',['nodemon','browser-sync'], function (done) {
+ console.log('[STARTING BACKEND]');
+});
+
+
+
+
+/**
+ * 
+ * 
+ * 
+ * var command;
+  gulp.task('server:debug', function (cb) {
+    process.env.DEBUG = 'backend:*';
+    command = spawn('node', ['bin/boot-backend.js'] );
+    console.log('[STARTING NEW PROCESS]', command.pid)
   // command = spawn('ls', ['-la'] );
   
   command.stdout.on('data', (data) => {
@@ -32,22 +72,26 @@ gulp.task('server:debug', function (cb) {
  
 });
 
+
+
 gulp.task('kill:server', function(done) {
   if (command){
-    console.log('[KILLING PROCESS]')
+    console.log('[KILLING PROCESS]', command.pid);
     command.kill('SIGHUP');//'SIGHUP'
-    command = null;
+    // command = null;
   }
   done();
 });
 
-gulp.task('server:restart',['kill:server','server:debug'], function (done) {
-  console.log('[RELOADING]');
-  browserSync.reload();
-  done();
-});
 
-gulp.task('debug',['server:debug', 'browser-sync'], function (done) {
- console.log('[STARTING BACKEND]');
-});
+  gulp.task('server:start', function (done) {
+    server.start();
+    done();
+  });
+  gulp.task('server:stop', function (done) {
+    server.stop();
+    done();
+  });
+  
 
+ */

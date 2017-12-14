@@ -1,0 +1,23 @@
+{
+  "name": "stocks",
+  "version": "1.0.0",
+  "description": "#Directorios",
+  "main": "index.js",
+  "bin": {
+    "stocks": "setup.js"
+  },
+  "scripts": {
+    "setup": "cd backend && npm install",
+    "server": "cd backend && npm run debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alecorsino/stocks.git"
+  },
+  "author": "Alejandro A. Corsino",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/alecorsino/stocks/issues"
+  },
+  "homepage": "https://github.com/alecorsino/stocks#readme"
+}

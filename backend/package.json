@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "debug": "DEBUG=backend:* node bin/boot-backend.js",
+    "debug": "gulp debug",
     "start": "node bin/boot-backend.js"
   },
   "dependencies": {

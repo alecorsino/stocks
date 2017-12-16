@@ -8,9 +8,9 @@
 
 ### Enter the container
 ```
-> docker ps
+docker ps
 
-> docker exec -it <container id> /bin/sh
+docker exec -it <container id> /bin/sh
 ```
 
 ### Rebuilding Image if something needs to be changed
@@ -23,4 +23,15 @@ or
 
 ```
 docker-compose up --build
+```
+
+
+### Npm packages Post installation
+
+`docker-compose run` \<named-service>  \<command>
+
+\<named-service>: Use container name used inside `docker-compose.yml` inside `service` section
+
+```
+docker-compose run backend yarn add gulp-nodemon
 ```

@@ -3,7 +3,7 @@ var router = express.Router();
 
 const MOCK_ARTICULOS = [
   {
-    id: '100',
+    id: '1001',
     nombre:'Lonas',
     precio:'11000.00'
   },

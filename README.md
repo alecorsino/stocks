@@ -6,8 +6,21 @@
 
 - `ui` Codigo Interfaz de Usuario (Angular).
 
+## Docker
+Es posible utilizar un Docker container con todo las dependencias instaladas en el.
+Solo Hay que clonar este GIT repositorio, instalar Docker y 
+Para iniciar el servidor backend en un container, correr: 
 
-## Prerequisitos
+```
+ docker-compose up -d
+```
+
+Para mas informacion ver `readme.md` en el directorio `backend`
+
+Otra alternativa es instalar todoas las depndencias locales decribidas en las secciones contiguas
+
+-----------
+## Sin usar `Docker`. Prerequisitos:
 - Nodejs: 8.9.3 Verficar con:
 
 `node --version`
@@ -31,14 +44,15 @@
 
 
 ## Desarrollo
+-----
 
-* ##### Iniciar el servidor de API `(backend)`. 
+#### Iniciar el servidor de API `(backend)`. 
 
 `npm run server`
 
 El servidor escucha en la direccion `http://localhost:4000`
 
-* #### Todos los request a la API seran siguiend el patron `RESTful` al `api/[mi_servicio]/[123]`
+#### Todos los request a la API seran siguiend el patron `RESTful` al `api/[mi_servicio]/[123]`
 
 Por ejemplo leer todos los Articulos (Ruta relativa):
 
@@ -51,11 +65,9 @@ Por ejemplo leer todos los Articulos (Ruta relativa):
 `http://localhost:4000/api/articulos`
 
 
-## Docker
 
-CONFIGURAR DOECK !!!!
-
-## VSCode 
+-----
+### VSCode 
 Plugins utiles:
 * vscode-icons
 * file-icons

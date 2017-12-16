@@ -3,8 +3,7 @@ services:
   backend:
     build: ./backend
     environment: 
-      - NPM_CONFIG_PREFIX=/home/node/.npm-global
-      - NODE_ENV=development
+      # - NODE_ENV=production
       - NPM_CONFIG_LOGLEVEL=info
     ports:
       - '4000:4000'

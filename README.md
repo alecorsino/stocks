@@ -11,9 +11,14 @@ Es posible utilizar un Docker container con todo las dependencias instaladas en 
 Solo Hay que clonar este GIT repositorio, instalar Docker y 
 Para iniciar el servidor backend en un container, correr: 
 
+Abrir una terminal y correr:
+
 ```
- docker-compose up -d
+ docker-compose up
 ```
+
+El backend va a escuchar el dirctorio local mapeado como un volumne interno en el container y refrescar los cambios.
+
 
 Para mas informacion ver `readme.md` en el directorio `backend`
 

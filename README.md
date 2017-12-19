@@ -74,7 +74,14 @@ Por ejemplo leer todos los Articulos (Ruta relativa):
 
 `http://localhost:4000/api/articulos`
 
+-----
 
+## Librerias externas y Preprocesadores
+
+#### Font Awesome: http://fontawesome.io/
+#### Lodash: https://lodash.com/
+#### Stylus: http://stylus-lang.com/
+#### Skeleton: http://getskeleton.com/
 
 -----
 ### VSCode 

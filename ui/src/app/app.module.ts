@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
+import { IconButtonComponent } from './components/framework/icon-button/icon-button.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticuloComponent
+    ArticuloComponent,
+    IconButtonComponent
   ],
   imports: [
     BrowserModule

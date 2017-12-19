@@ -57,6 +57,11 @@ Otra alternativa es instalar todoas las depndencias locales decribidas en las se
 
 El servidor escucha en la direccion `http://localhost:4000`
 
+#### Iniciar  UI con live reload.
+
+`npm run ui`
+
+
 #### Todos los request a la API seran siguiend el patron `RESTful` al `api/[mi_servicio]/[123]`
 
 Por ejemplo leer todos los Articulos (Ruta relativa):

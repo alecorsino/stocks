@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class IconButtonComponent implements OnInit {
 
   @Input() iconClass:string;
-  @Input() texto:string;
+  @Input() buttonClass:string;
 
   constructor() { }
 

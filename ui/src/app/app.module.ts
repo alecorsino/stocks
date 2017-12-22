@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import { IconButtonComponent } from './components/framework/icon-button/icon-button.component';
-import { AppRoutignModule } from './app-routign.module';
+import { AppRoutignModule } from './app-routing.module';
 
 
 @NgModule({

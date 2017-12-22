@@ -5,7 +5,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
-export class ArticuloService {
+export class ConfiguracionService {
 
   constructor() { }
 

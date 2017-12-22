@@ -1,25 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Articulo } from '../../model/articulo';
 import { MessageService } from '../../framework/messages/message.service';
 
 
 @Component({
   selector: 'configuracion',
-  templateUrl: './articulo.component.html',
-  styleUrls: ['./articulo.component.styl']
+  templateUrl: './configuracion.component.html',
+  styleUrls: ['./configuracion.component.styl']
 })
-export class ArticuloComponent implements OnInit {
+export class ConfiguracionComponent implements OnInit {
   
-  constructor(private http: HttpClient,
-              private messageService: MessageService) { 
+  constructor(private http: HttpClient) { 
 
 
   }
 
-  private log(message: string) {
-    this.messageService.add(`Stocks:  ${message}`);
-  }
 
   ngOnInit() {
   }

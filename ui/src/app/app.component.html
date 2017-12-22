@@ -1,28 +1,29 @@
+<header>
+    <div class="container">
+        <div class="row">
+          <div class="twelve columns" >
+              <div class="margin-vertical-m">
+                <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
+                <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
+                <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
+              </div>
+          </div>
+          
+        </div>
+
+    </div>  
+</header>
+
 <div class="container">
     <div class="row">
-      <div class="three columns" >
-        <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
-        <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
-      </div>
-      <div class="nine columns" >
-        <a class="button" href="#">Anchor button</a>
+      <div class="twelve columns" >
+
+        <router-outlet></router-outlet>
+      
       </div>
     </div>
-</div>  
-  <h1>
-    Stocks {{ title }}! <i class="fa fa-truck" aria-hidden="true"></i>
-  </h1>
-  <img width="300" alt="Angular Logo" src="assets/stocks.png">
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h6 class="inline"><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h6>
-  </li>
-  <li>
-    <h6 class="inline"><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h6>
-  </li>
-  <li>
-    <h6 class="inline"><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h6>
-  </li>
-</ul>
+</div>
 
+<footer>
+
+</footer>

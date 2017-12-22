@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Articulo } from '../../model/articulo';
+import { MessageService } from '../../framework/messages/message.service';
+
 
 @Component({
   selector: 'app-articulo',
@@ -7,8 +10,16 @@ import { Articulo } from '../../model/articulo';
   styleUrls: ['./articulo.component.styl']
 })
 export class ArticuloComponent implements OnInit {
+  
+  constructor(private http: HttpClient,
+              private messageService: MessageService) { 
 
-  constructor() { }
+
+  }
+
+  private log(message: string) {
+    this.messageService.add(`Stocks:  ${message}`);
+  }
 
   ngOnInit() {
   }

@@ -9,7 +9,8 @@
   "scripts": {
     "setup": "cd backend && npm install",
     "server": "cd backend && npm run start",
-    "ui": "cd ui && ng serve --open"
+    "ui": "cd ui && ng serve --open",
+    "docker:backend":"docker-compose up backend"
   },
   "repository": {
     "type": "git",

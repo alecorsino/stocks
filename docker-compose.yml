@@ -4,13 +4,14 @@ services:
     build: ./backend
     environment: 
       # - NODE_ENV=production
+      # - DEBUG=backend:*
       - NPM_CONFIG_LOGLEVEL=info
     ports:
-      - '4000:4000'
+      - '7000:7000'
     volumes:
       - ./backend:/home/node/backend
       - backend_node_mod:/home/node/backend/node_modules
-    command: npm run debug
+    # command: npm run debug
     tty: true
     stdin_open: true
 volumes:

@@ -1,43 +1,22 @@
-/**
- * Module dependencies.
- */
-var backend = require('../backend');
-var debug = require('debug')('backend:server');
-var http = require('http');
+const backend = require('../backend');
+const debug = require('debug')('backend:server');
+const http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-// var port = normalizePort(process.env.PORT || '3000');
-var port = '7000';
+var port = process.env.PORT || '7000';
 var server;
+// process.env.DEBUG = 'backend:*';
+console.log('[PROCESS ENV DEBUG]',  process.env.DEBUG)
+console.log('[PROCESS ENV PORT]',  process.env.PORT)
+// debug('Listening on ', port);
 
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
 
 /**
  * Event listener for HTTP server "error" event.
  */
-
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -71,7 +50,8 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  debug('[LISTENING ON]' + bind);
+  console.log('[LISTENING ON]' + bind);
 }
 
 function onClose(){
@@ -90,6 +70,14 @@ function start(){
   server.on('error', onError);
   server.on('listening', onListening);
   server.on('close', onClose);
+
+  process.on('SIGINT', function() {
+    // db.stop(function(err) {
+    //   process.exit(err ? 1 : 0);
+    // });
+    console.log('[KILLING SERVER] SIGINT:');
+    server.close();
+ });
 }
 
 function stop(){

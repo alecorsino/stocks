@@ -8,7 +8,7 @@
   },
   "scripts": {
     "setup": "cd backend && npm install",
-    "server": "cd backend && npm run debug",
+    "server": "cd backend && npm run start",
     "ui": "cd ui && ng serve --open"
   },
   "repository": {

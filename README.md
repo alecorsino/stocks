@@ -13,8 +13,9 @@ Para iniciar el servidor backend en un container, correr:
 
 Abrir una terminal y correr:
 
+#### INICIAR EL BACKEND (mode development)
 ```
- docker-compose up
+ docker-compose up backend
 ```
 
 El backend va a escuchar el dirctorio local mapeado como un volumne interno en el container y refrescar los cambios.
@@ -24,24 +25,24 @@ Para mas informacion ver `readme.md` en el directorio `backend`
 
 Otra alternativa es instalar todoas las depndencias locales decribidas en las secciones contiguas
 
+#### INICIAR EL FRONT-END (mode development)
+
+```
+ng serve --open
+``` 
 -----------
 ## Sin usar `Docker`. Prerequisitos:
-- Nodejs: 8.9.3 Verficar con:
+#### Nodejs: 8.9.3 Verficar con:
 
 `node --version`
 
-- Gulp CLI version 1.4.x o mas grande. Verficar con: `gulp -v`
+#### Instalar PM2
 
-
-`npm install --global gulp-cli`
+` npm install pm2 -g`
 
 
 ## Preparar codigo para empezar desarrollo
-----
-
-* #### Instalar todos los paquetes Node en el root dir del projecto
-
-`npm install`
+---- 
 
 * #### Correr setup del projecto
 
@@ -51,15 +52,23 @@ Otra alternativa es instalar todoas las depndencias locales decribidas en las se
 ## Desarrollo
 -----
 
-#### Iniciar el servidor de API `(backend)`. 
+### Iniciar el servidor de API `(backend)`. 
 
 `npm run server`
 
-El servidor escucha en la direccion `http://localhost:4000`
+El servidor escucha en la direccion `http://localhost:7000`
 
-#### Iniciar  UI con live reload.
+### Iniciar  UI con live reload.
 
-`npm run ui`
+`npm run ui` 
+
+Tmabien se puede iniciar:
+
+`cd ui && ng serve --open`
+
+### Angular CLI 
+
+Familiarizarce con angular cli https://cli.angular.io/
 
 
 #### Todos los request a la API seran siguiend el patron `RESTful` al `api/[mi_servicio]/[123]`
@@ -72,7 +81,7 @@ Por ejemplo leer todos los Articulos (Ruta relativa):
 
 ##### Ruta Absoluta
 
-`http://localhost:4000/api/articulos`
+`http://localhost:7000/api/articulos`
 
 -----
 

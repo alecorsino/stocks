@@ -1,0 +1,9 @@
+{
+  "apps": [{
+    "name": "Stocks_Backend_API",
+    "script": "bin/start.js",
+    "env": {
+      "production": false
+    }
+  }]
+}

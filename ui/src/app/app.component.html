@@ -3,10 +3,9 @@
         STOCKS
     </div>
     <div class="nav-buttons text-center">
-        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
-        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
-        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
-        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
+            <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
+            <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
+            <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
         
     </div>
 </section>
@@ -17,9 +16,7 @@
                     <div class="row">
                       <div class="twelve columns" >
                           <div class="margin-vertical-m">
-                            <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
-                            <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
-                            <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
+                           
                           </div>
                       </div>
                       
@@ -40,13 +37,11 @@
             </div>
             
             
-            <footer>
+            <footer class="bottom-fixed">
                 <div class="container">
-                    <div class="row">
-                        <div class="twelve columns" >
+                    
                             <app-message></app-message>
-                        </div>
-                    </div>
+                     
                 </div>
             </footer>
 </section>

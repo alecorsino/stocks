@@ -1,0 +1,19 @@
+<div *ngIf="messageService.messages.length">
+
+      <div class="row">
+          <div class="ten columns">
+              <h6 >Atencion: </h6> 
+          </div>
+          <div class="two columns">
+    
+            <a ng-href="#" (click)="messageService.clear()">  <i class="fa fa-times"></i> cerrar </a>
+          </div>
+      </div>
+      <div class="row">
+          <div class="messages">
+
+            <div *ngFor='let message of messageService.messages'> {{message}} </div>
+          </div>
+      </div>
+  
+</div>

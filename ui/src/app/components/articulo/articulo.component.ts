@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Articulo } from '../../model/articulo';
-import { MessageService } from '../../framework/messages/message.service';
+import { MessageService } from '../../modules/framework/messages/message.service';
 
 
 @Component({
@@ -22,6 +22,8 @@ export class ArticuloComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.log('[INIT]');
+    this.log('No Stocks');
   }
 
 }

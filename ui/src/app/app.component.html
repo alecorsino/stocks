@@ -1,36 +1,52 @@
-<header>
-    <div class="container">
-        <div class="row">
-          <div class="twelve columns" >
-              <div class="margin-vertical-m">
-                <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
-                <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
-                <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
-              </div>
-          </div>
-          
-        </div>
-
-    </div>  
-</header>
-
-<div class="container">
-    <div class="row">
-      <div class="twelve columns" >
-
-        <router-outlet></router-outlet>
-      
-      </div>
+<section class="side_nav">
+    <div class="text-center logo">
+        STOCKS
     </div>
-</div>
+    <div class="nav-buttons text-center">
+        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
+        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
+        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
+        <div><i class="fa fa-cubes" aria-hidden="true"></i> Stocks</div>
+        
+    </div>
+</section>
 
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns" >
-                <app-message></app-message>
+<section class="content">
+        <header>
+                <div class="container">
+                    <div class="row">
+                      <div class="twelve columns" >
+                          <div class="margin-vertical-m">
+                            <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
+                            <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
+                            <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
+                          </div>
+                      </div>
+                      
+                    </div>
+            
+                </div>  
+            </header>
+            
+            
+            <div class="container">
+                <div class="row">
+                  <div class="twelve columns" >
+            
+                    <router-outlet></router-outlet>
+                  
+                  </div>
+                </div>
             </div>
-        </div>
-    </div>
-</footer>
+            
+            
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="twelve columns" >
+                            <app-message></app-message>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+</section>

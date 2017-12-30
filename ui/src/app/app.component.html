@@ -1,47 +1,47 @@
-<section class="side_nav">
-    <div class="text-center logo">
-        STOCKS
-    </div>
-    <div class="nav-buttons text-center">
-            <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
-            <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
-            <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
-        
-    </div>
-</section>
+<div id="main_page">
 
-<section class="content">
-        <header>
-                <div class="container">
-                    <div class="row">
-                      <div class="twelve columns" >
-                          <div class="margin-vertical-m">
-                           
-                          </div>
-                      </div>
-                      
-                    </div>
+    <section class="side_nav">
+        <div class="text-center logo">
+            STOCKS
+        </div>
+        <div class="nav-buttons text-center">
+                <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
+                <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
+                <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
             
-                </div>  
+        </div>
+    </section>
+
+    <section class="main_content">
+            <header>
+                    <div class="container">
+                        <div class="row">
+                        <div class="twelve columns" >
+                            <div class="margin-vertical-m">
+                            
+                            </div>
+                        </div>
+                        
+                        </div>
+                
+                    </div>  
             </header>
-            
-            
+                
             <div class="container">
                 <div class="row">
-                  <div class="twelve columns" >
+                    <div class="twelve columns" >
             
                     <router-outlet></router-outlet>
-                  
-                  </div>
+                    
+                    </div>
                 </div>
             </div>
             
-            
-            <footer class="bottom-fixed">
+            <footer class="bottom-fixed" style="width:80%">
                 <div class="container">
-                    
-                            <app-message></app-message>
-                     
+                        <app-message></app-message>
                 </div>
             </footer>
-</section>
+    </section>
+
+</div>

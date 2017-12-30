@@ -1,10 +1,18 @@
 @import "~styles/variables"
 
+:host > div
+  max-width: 1400px
+  margin: 0 auto
+
+#main_page
+  display: flex
+  // justify-content: center
+  // align-items: stretch //default
+
 .side_nav
-  border-right: 1px solid white
-  width: 20%
-  float: left
-  box-sizing: border-box
+  flex: 1
+  border: 1px solid white
+  // flex-basis: 20%// width: 80%
 
   .logo
     // padding: 1em
@@ -13,10 +21,13 @@
   
   .nav-buttons div
     border-bottom: 1px solid #444
-    height: 3em
+    // height: 4em
 
 
-.content
-  width: 80%
-  float: left
-  box-sizing: border-box
+.main_content
+  flex: 4
+  border: 1px solid white
+  // flex-basis: 80%// width: 80%
+  // float: left
+  // display: inline-block
+  // box-sizing: border-box

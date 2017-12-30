@@ -1,11 +1,19 @@
 @import "~styles/variables"
 
 :host > div
-  max-width: 1400px
   margin: 0 auto
+  max-width: 1400px
+
+.fullheight
+  min-height: 100%;
+  display: flex
+  flex-direction: column
+  
 
 #main_page
+  flex: 1
   display: flex
+  flex-direction: row
   // justify-content: center
   // align-items: stretch //default
 

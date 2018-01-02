@@ -6,9 +6,19 @@
                         STOCKS
                     </div>
                     <div class="nav-buttons text-center">
-                            <icon-button routerLink="/" [buttonClass]="'button-primary'" [iconClass]="'fa fa-home'">Home</icon-button>  
-                            <icon-button routerLink="/articulos" [buttonClass]="'button-primary'" [iconClass]="'fa fa-cubes'">Stocks</icon-button>  
-                            <icon-button [buttonClass]="'button-primary'" [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
+                        <icon-button 
+                            routerLink="/" 
+                            [routerLinkActiveOptions]="{exact:true}"
+                            routerLinkActive="primary-color" 
+                            [iconClass]="'fa fa-home'">Home
+                        </icon-button>  
+                        <icon-button 
+                            routerLink="/articulos" 
+                            [routerLinkActive]="['primary-color']" 
+                            [iconClass]="'fa fa-cubes'">
+                            Stocks
+                        </icon-button>  
+                            <icon-button  [iconClass]="'fa fa-cog'" >Configuracion</icon-button>  
                         
                     </div>
                 </section>

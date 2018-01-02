@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ArticuloComponent } from './components/articulo/articulo.component';
+
 import { AppRoutignModule } from './app-routing.module';
 // import { MessageService } from './modules/framework/messages/message.service';
 import {FrameworkModule} from './modules/framework.module';
@@ -11,8 +11,7 @@ import {FrameworkModule} from './modules/framework.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ArticuloComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

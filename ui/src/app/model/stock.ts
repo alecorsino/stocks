@@ -1,4 +1,4 @@
-export interface Articulo {
+export interface Stock {
   id:number;
   nombre:string;
   descripcion:string;

@@ -5,13 +5,13 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
-export class ArticuloService {
+export class StocksService {
 
   constructor() { }
 
   
-  // getStocks (): Observable<Articulo[]> {
-  //   return this.http.get<Articulo[]>(url)
+  // getStocks (): Observable<Sstock[]> {
+  //   return this.http.get<Stock[]>(url)
   // }
 
 }

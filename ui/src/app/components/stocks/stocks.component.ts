@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Articulo } from '../../model/articulo';
+import { Stock } from '../../model/stock';
 import { MessageService } from '../../modules/framework/messages/message.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 
 @Component({
-  selector: 'app-articulo',
-  templateUrl: './articulo.component.html',
-  styleUrls: ['./articulo.component.styl']
+  selector: 'app-stocks',
+  templateUrl: './stocks.component.html',
+  styleUrls: ['./stocks.component.styl']
 })
-export class ArticuloComponent implements OnInit {
+export class StocksComponent implements OnInit {
   
   constructor(private http: HttpClient,
               private messageService: MessageService,

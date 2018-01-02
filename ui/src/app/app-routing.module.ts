@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 /*
   Top Level 'Page' Components declared into this module
 */
-import { ArticuloComponent } from './components/articulo/articulo.component';
+import { StocksComponent } from './components/stocks/stocks.component';
 import { HomeComponent } from './components/home/home.component';
 
 
@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'articulos', component: ArticuloComponent}
+  {path: 'stocks', component: StocksComponent}
 ]
 
 @NgModule({
@@ -21,12 +21,12 @@ const routes: Routes = [
   ],
   declarations:[
     HomeComponent,
-    ArticuloComponent
+    StocksComponent
   ],
   exports: [ 
     RouterModule,
     HomeComponent,
-    ArticuloComponent
+    StocksComponent
    ]
 })
 export class AppRoutignModule { }

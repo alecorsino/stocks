@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { CommonModule } from "@angular/common";
 
 /*
   Top Level 'Page' Components declared into this module
@@ -17,6 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   imports:[ 
+    CommonModule,
     RouterModule.forRoot(routes)
   ],
   declarations:[

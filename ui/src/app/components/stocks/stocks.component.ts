@@ -13,6 +13,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class StocksComponent implements OnInit {
   
+  results: any;
+  
   constructor(private http: HttpClient,
               private messageService: MessageService,
               private route: ActivatedRoute) { 
@@ -28,8 +30,16 @@ export class StocksComponent implements OnInit {
   }
 
   ngOnInit() {
+     // Make the HTTP request:
+     this.http.get('http://localhost:7000/api/articulos').subscribe(data => {
+      // Read the result field from the JSON response.
+      this.results = data;
+      console.log('[STOCK]', data);
+      
+    });
     this.log('[INIT]');
     this.log('No Stocks');
   }
 
+  
 }

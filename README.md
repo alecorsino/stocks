@@ -100,3 +100,13 @@ Plugins utiles:
 
 ### Otros programs utiles
 *  POSTMAN https://www.getpostman.com/
+
+## Security
+
+https://nodesecurity.io/
+
+https://enable-cors.org/index.html
+
+https://expressjs.com/en/advanced/best-practice-security.html
+
+

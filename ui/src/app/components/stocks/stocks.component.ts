@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Stock } from '../../model/stock';
 import { MessageService } from '../../modules/framework/messages/message.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import {StocksService} from './stocks.service'
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -11,34 +13,43 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './stocks.component.html',
   styleUrls: ['./stocks.component.styl']
 })
-export class StocksComponent implements OnInit {
+export class StocksComponent implements OnInit, OnDestroy {
   
-  results: any;
+  subscriptions: Subscription
+  stocks: any;
   
-  constructor(private http: HttpClient,
+  constructor(private stockService: StocksService,
+              private http: HttpClient,
               private messageService: MessageService,
-              private route: ActivatedRoute) { 
+              private route: ActivatedRoute) {  }
 
-
-                // const url: Observable<string> = route.url.map(segments => segments.join(''));
-  }
-
-  
 
   private log(message: string) {
-    this.messageService.add(`Stocks:  ${message}`);
+    this.messageService.add(`[STOCKS] ${message}`);
   }
 
   ngOnInit() {
-     // Make the HTTP request:
-     this.http.get('http://localhost:7000/api/articulos').subscribe(data => {
-      // Read the result field from the JSON response.
-      this.results = data;
-      console.log('[STOCK]', data);
-      
-    });
-    this.log('[INIT]');
-    this.log('No Stocks');
+    this.subscriptions = this.stockService.getAllStocks()
+      .subscribe( 
+        data => {
+          this.stocks = data;
+          this.log(`recieved: ${data.length}`);
+        },
+        error => {
+          this.log(`error en la API ${error}`);
+        });
+    
+  }
+
+  ngOnDestroy(){
+    this.subscriptions.unsubscribe();
+  }
+
+  getStockByID(id:string){
+    // const subs =
+
+    // this.subscriptions.add(subs);
+
   }
 
   

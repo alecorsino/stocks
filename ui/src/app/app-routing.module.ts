@@ -6,6 +6,8 @@ import { CommonModule } from "@angular/common";
   Top Level 'Page' Components declared into this module
 */
 import { StocksComponent } from './components/stocks/stocks.component';
+import { StocksService} from './components/stocks/stocks.service';
+
 import { HomeComponent } from './components/home/home.component';
 
 
@@ -29,6 +31,9 @@ const routes: Routes = [
     RouterModule,
     HomeComponent,
     StocksComponent
+   ],
+   providers:[
+    StocksService
    ]
 })
 export class AppRoutignModule { }

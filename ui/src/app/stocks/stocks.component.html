@@ -8,6 +8,6 @@
     <hr>
 
     <ul>
-        <li *ngFor="let stock of stocks">{{stock.id}} - {{stock.nombre}}</li>
+        <li *ngFor="let stock of stocks | async ">{{stock?.id}} - {{stock?.nombre}}</li>
     </ul>
 </div>

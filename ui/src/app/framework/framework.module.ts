@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconButtonComponent } from './framework/icon-button/icon-button.component';
-import { MessageComponent } from './framework/messages/message.component';
-import { MessageService } from './framework/messages/message.service';
+import { IconButtonComponent } from './icon-button/icon-button.component';
+import { MessageComponent } from './messages/message.component';
+import { MessageService } from './messages/message.service';
 
 @NgModule({
   imports: [

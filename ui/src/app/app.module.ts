@@ -1,13 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-//OLD MODULE in V2 // import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
 import { AppRoutignModule } from './app-routing.module';
-// import { MessageService } from './modules/framework/messages/message.service';
-import {FrameworkModule} from './modules/framework.module';
+import { FrameworkModule } from './framework/framework.module';
 
 
 @NgModule({
@@ -17,7 +14,6 @@ import {FrameworkModule} from './modules/framework.module';
   imports: [
     BrowserModule,
     AppRoutignModule,
-    HttpClientModule,
     FrameworkModule
   ],
   providers: [],

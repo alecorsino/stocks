@@ -5,16 +5,16 @@
                     <div class="text-center logo">
                         STOCKS
                     </div>
-                    <div class="nav-buttons text-center">
+                    <div class="nav-buttons">
                         <icon-button 
                             routerLink="/" 
                             [routerLinkActiveOptions]="{exact:true}"
-                            routerLinkActive="primary-color" 
+                            [routerLinkActive]="['primary-color', 'active']" 
                             [iconClass]="'fa fa-home'">Home
                         </icon-button>  
                         <icon-button 
                             routerLink="/stocks" 
-                            [routerLinkActive]="['primary-color']" 
+                            [routerLinkActive]="['primary-color', 'active']" 
                             [iconClass]="'fa fa-cubes'">
                             Stocks
                         </icon-button>  

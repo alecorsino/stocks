@@ -1,3 +1,16 @@
 node_modules
+
+# --- Backend dir ----
 backend/node_modules
+
+# --- UI dir ---
 ui/node_modules
+
+# --- DB dir ---
+
+# ignore everything. DB Data
+db/data/*
+db/node_modules
+
+# except
+# !db/data/datafiles.md

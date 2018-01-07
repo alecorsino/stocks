@@ -9,62 +9,56 @@
 ## Docker
 Es posible utilizar un Docker container con todo las dependencias instaladas en el.
 Solo Hay que clonar este GIT repositorio, instalar Docker y 
-Para iniciar el servidor backend en un container, correr: 
+Para iniciar el servidor backend, postgres y db admin en un container, correr: 
 
 Abrir una terminal y correr:
+
+#### INICIAR POSTGRES 
+
+```
+ docker-compose up db
+```
+
+El puerto por defecto de postgres `5432` esta expuesto para poder acceder desde afuera del container y administrar la DB con cualquier admin que quieran.
+Si no , pueden usar el Admin de la seccion que sigue.
+
+##### PGADMIN 4 (POSTRGRES )
+
+```
+ docker-compose up -d db-admin 
+```
+Ir a http://localhost:5000 y configurar la instancia de Postgress que corre en el container:
+
+```
+db: stocks
+Superuser: stocks
+password: stocker
+
+```
+
+
 
 #### INICIAR EL BACKEND (mode development)
 ```
  docker-compose up backend
 ```
 
-El backend va a escuchar el dirctorio local mapeado como un volumne interno en el container y refrescar los cambios.
+El backend va a escuchar el dirctorio local mapeado como un volumne interno en el container y refrescar los cambios. `Iniciar primero la DB  si no iniciaron todo el sistema junto`
 
 
 Para mas informacion ver `readme.md` en el directorio `backend`
 
-Otra alternativa es instalar todoas las depndencias locales decribidas en las secciones contiguas
 
 #### INICIAR EL FRONT-END (mode development)
 
 ```
-ng serve --open
+cd ui && ng serve --open
 ``` 
------------
-## Sin usar `Docker`. Prerequisitos:
-#### Nodejs: 8.9.3 Verficar con:
 
-`node --version`
-
-#### Instalar PM2
-
-` npm install pm2 -g`
-
-
-## Preparar codigo para empezar desarrollo
----- 
-
-* #### Correr setup del projecto
-
-`npm run setup`
-
-
-## Desarrollo
------
-
-### Iniciar el servidor de API `(backend)`. 
-
-`npm run server`
-
-El servidor escucha en la direccion `http://localhost:7000`
-
-### Iniciar  UI con live reload.
+Tambien se puede iniciar:
 
 `npm run ui` 
 
-Tmabien se puede iniciar:
-
-`cd ui && ng serve --open`
 
 ### Angular CLI 
 

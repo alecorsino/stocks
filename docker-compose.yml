@@ -14,5 +14,26 @@ services:
     # command: npm run debug
     tty: true
     stdin_open: true
+  
+  db:
+    image: postgres:10.1-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: stocker
+      POSTGRES_USER: stocks
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./db/data:/var/lib/postgresql/data/pgdata
+    ports:
+      - '5432:5432'
+
+  db-admin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=a@a.com
+      - PGADMIN_DEFAULT_PASSWORD=123
+    ports:
+      - '5000:80'
+
 volumes:
   backend_node_mod:
